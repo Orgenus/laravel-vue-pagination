@@ -123,6 +123,7 @@ const _sfc_main$1 = {
       showDisabled: this.showDisabled,
       size: this.size,
       align: this.align,
+      themeEngine: this.themeEngine,
       computed: {
         isApiResource: this.isApiResource,
         currentPage: this.currentPage,

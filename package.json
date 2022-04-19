@@ -1,6 +1,6 @@
 {
   "name": "laravel-vue-pagination-theme",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Vue.js pagination component for Laravel paginators",
   "author": "Gilbert Pellegrom <gilbert@pellegrom.me>",
   "homepage": "https://github.com/orgenus/laravel-vue-pagination",
