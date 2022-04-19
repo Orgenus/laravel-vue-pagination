@@ -1,9 +1,9 @@
 {
   "name": "laravel-vue-pagination",
-  "version": "3.0.0",
+  "version": "1.0.0",
   "description": "Vue.js pagination component for Laravel paginators",
   "author": "Gilbert Pellegrom <gilbert@pellegrom.me>",
-  "homepage": "https://github.com/gilbitron/laravel-vue-pagination",
+  "homepage": "https://github.com/orgenus/laravel-vue-pagination",
   "license": "MIT",
   "keywords": [
     "vue",
@@ -14,7 +14,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/gilbitron/laravel-vue-pagination.git"
+    "url": "https://github.com/orgenus/laravel-vue-pagination.git"
   },
   "files": [
     "dist",
