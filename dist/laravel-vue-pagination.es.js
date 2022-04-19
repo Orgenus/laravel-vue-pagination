@@ -214,7 +214,7 @@ const _sfc_main = {
 const _hoisted_1 = { key: 0 };
 const _hoisted_2 = /* @__PURE__ */ createElementVNode("a", {
   href: "#",
-  class: "relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+  class: "bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
 }, [
   /* @__PURE__ */ createElementVNode("svg", {
     style: { "width": "1.25rem", "height": "1.25rem" },
@@ -306,7 +306,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
             createElementVNode("a", mergeProps({
               href: "#",
               tabindex: !slotProps.computed.nextPageUrl && -1
-            }, toHandlers(slotProps.nextButtonEvents), { class: "relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50" }), _hoisted_6, 16, _hoisted_4)
+            }, toHandlers(slotProps.nextButtonEvents), { class: "bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium" }), _hoisted_6, 16, _hoisted_4)
           ], 2)) : createCommentVNode("", true)
         ], 16)) : createCommentVNode("", true)
       ])) : (openBlock(), createElementBlock("div", _hoisted_7, [
