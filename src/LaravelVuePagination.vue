@@ -8,20 +8,21 @@
         @pagination-change-page="onPaginationChangePage"
         v-slot="slotProps"
     >
-        <div v-if="slotProps.themeEngine === 'tailwind'">
+        <div
+            class="flex"  
+            :class="{
+                'pagination-sm': slotProps.size == 'small',
+                'pagination-lg': slotProps.size == 'large',
+                'justify-content-center': slotProps.align == 'center',
+                'justify-content-end': slotProps.align == 'right'
+            }" v-if="slotProps.themeEngine === 'tailwind'">
             <ul
                 v-bind="$attrs"
                 class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination"
-                :class="{
-                    'pagination-sm': slotProps.size == 'small',
-                    'pagination-lg': slotProps.size == 'large',
-                    'justify-content-center': slotProps.align == 'center',
-                    'justify-content-end': slotProps.align == 'right'
-                }"
                 v-if="slotProps.computed.total > slotProps.computed.perPage">
                 
                 <li :class="{'disabled': !slotProps.computed.prevPageUrl}" v-if="slotProps.computed.prevPageUrl || slotProps.showDisabled">
-                    <a href="#" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
+                    <a href="#" :tabindex="!slotProps.computed.prevPageUrl && -1" v-on="slotProps.prevButtonEvents" class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium">
                         <svg style="width: 1.25rem;height: 1.25rem;" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                             <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
                         </svg>
@@ -31,7 +32,7 @@
                 
 
                 <li class="page-item pagination-page-nav" v-for="(page, key) in slotProps.computed.pageRange" :key="key" :class="{ 'active': page == slotProps.computed.currentPage }">
-                    <a class="bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium" href="#" v-on="slotProps.pageButtonEvents(page)">
+                    <a :class="{'z-10 bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium': page == slotProps.computed.currentPage, 'bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium': page != slotProps.computed.currentPage}"  href="#" v-on="slotProps.pageButtonEvents(page)">
                         {{ page }}
                     </a>
                 </li>
