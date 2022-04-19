@@ -1,4 +1,4 @@
-import { resolveComponent, openBlock, createBlock, withCtx, createElementBlock, mergeProps, normalizeClass, createElementVNode, toHandlers, createCommentVNode, Fragment, renderList, toDisplayString, renderSlot, createTextVNode } from "vue";
+import { resolveComponent, openBlock, createBlock, withCtx, createElementBlock, mergeProps, normalizeClass, createCommentVNode, Fragment, renderList, createElementVNode, toHandlers, toDisplayString, renderSlot, createTextVNode } from "vue";
 const _sfc_main$1 = {
   emits: ["pagination-change-page"],
   props: {
@@ -212,31 +212,36 @@ const _sfc_main = {
   }
 };
 const _hoisted_1 = { key: 0 };
-const _hoisted_2 = ["tabindex"];
-const _hoisted_3 = /* @__PURE__ */ createElementVNode("span", { class: "sr-only" }, "Previous", -1);
-const _hoisted_4 = /* @__PURE__ */ createElementVNode("svg", {
-  class: "w-5 h-5",
-  fill: "currentColor",
-  viewBox: "0 0 20 20",
-  xmlns: "http://www.w3.org/2000/svg"
+const _hoisted_2 = /* @__PURE__ */ createElementVNode("a", {
+  href: "#",
+  class: "relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
 }, [
-  /* @__PURE__ */ createElementVNode("path", {
-    "fill-rule": "evenodd",
-    d: "M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z",
-    "clip-rule": "evenodd"
-  })
+  /* @__PURE__ */ createElementVNode("span", { class: "sr-only" }, "Previous"),
+  /* @__PURE__ */ createElementVNode("svg", {
+    class: "h-5 w-5",
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 20 20",
+    fill: "currentColor",
+    "aria-hidden": "true"
+  }, [
+    /* @__PURE__ */ createElementVNode("path", {
+      "fill-rule": "evenodd",
+      d: "M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z",
+      "clip-rule": "evenodd"
+    })
+  ])
 ], -1);
-const _hoisted_5 = [
-  _hoisted_3,
-  _hoisted_4
+const _hoisted_3 = [
+  _hoisted_2
 ];
-const _hoisted_6 = ["tabindex"];
-const _hoisted_7 = /* @__PURE__ */ createElementVNode("span", { class: "sr-only" }, "Next", -1);
-const _hoisted_8 = /* @__PURE__ */ createElementVNode("svg", {
-  class: "w-5 h-5",
-  fill: "currentColor",
+const _hoisted_4 = ["tabindex"];
+const _hoisted_5 = /* @__PURE__ */ createElementVNode("span", { class: "sr-only" }, "Next", -1);
+const _hoisted_6 = /* @__PURE__ */ createElementVNode("svg", {
+  class: "h-5 w-5",
+  xmlns: "http://www.w3.org/2000/svg",
   viewBox: "0 0 20 20",
-  xmlns: "http://www.w3.org/2000/svg"
+  fill: "currentColor",
+  "aria-hidden": "true"
 }, [
   /* @__PURE__ */ createElementVNode("path", {
     "fill-rule": "evenodd",
@@ -244,21 +249,21 @@ const _hoisted_8 = /* @__PURE__ */ createElementVNode("svg", {
     "clip-rule": "evenodd"
   })
 ], -1);
-const _hoisted_9 = [
-  _hoisted_7,
-  _hoisted_8
+const _hoisted_7 = [
+  _hoisted_5,
+  _hoisted_6
 ];
-const _hoisted_10 = { key: 1 };
-const _hoisted_11 = ["tabindex"];
-const _hoisted_12 = /* @__PURE__ */ createElementVNode("span", { "aria-hidden": "true" }, "\xAB", -1);
-const _hoisted_13 = /* @__PURE__ */ createElementVNode("span", { class: "sr-only" }, "Previous", -1);
-const _hoisted_14 = {
+const _hoisted_8 = { key: 1 };
+const _hoisted_9 = ["tabindex"];
+const _hoisted_10 = /* @__PURE__ */ createElementVNode("span", { "aria-hidden": "true" }, "\xAB", -1);
+const _hoisted_11 = /* @__PURE__ */ createElementVNode("span", { class: "sr-only" }, "Previous", -1);
+const _hoisted_12 = {
   key: 0,
   class: "sr-only"
 };
-const _hoisted_15 = ["tabindex"];
-const _hoisted_16 = /* @__PURE__ */ createElementVNode("span", { "aria-hidden": "true" }, "\xBB", -1);
-const _hoisted_17 = /* @__PURE__ */ createElementVNode("span", { class: "sr-only" }, "Next", -1);
+const _hoisted_13 = ["tabindex"];
+const _hoisted_14 = /* @__PURE__ */ createElementVNode("span", { "aria-hidden": "true" }, "\xBB", -1);
+const _hoisted_15 = /* @__PURE__ */ createElementVNode("span", { class: "sr-only" }, "Next", -1);
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_RenderlessLaravelVuePagination = resolveComponent("RenderlessLaravelVuePagination");
   return openBlock(), createBlock(_component_RenderlessLaravelVuePagination, {
@@ -272,32 +277,25 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     default: withCtx((slotProps) => [
       slotProps.themeEngine === "tailwind" ? (openBlock(), createElementBlock("div", _hoisted_1, [
         slotProps.computed.total > slotProps.computed.perPage ? (openBlock(), createElementBlock("ul", mergeProps({ key: 0 }, _ctx.$attrs, {
-          class: ["pagination inline-flex -space-x-px", {
+          class: ["relative z-0 inline-flex rounded-md shadow-sm -space-x-px", {
             "pagination-sm": slotProps.size == "small",
             "pagination-lg": slotProps.size == "large",
             "justify-content-center": slotProps.align == "center",
             "justify-content-end": slotProps.align == "right"
-          }]
+          }],
+          "aria-label": "Pagination"
         }), [
           slotProps.computed.prevPageUrl || slotProps.showDisabled ? (openBlock(), createElementBlock("li", {
             key: 0,
-            class: normalizeClass(["page-item pagination-prev-nav", { "disabled": !slotProps.computed.prevPageUrl }])
-          }, [
-            createElementVNode("a", mergeProps({
-              "aria-label": "Previous",
-              tabindex: !slotProps.computed.prevPageUrl && -1
-            }, toHandlers(slotProps.prevButtonEvents), {
-              href: "#",
-              class: "page-linkblock py-2 px-3 ml-0 leading-tight text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
-            }), _hoisted_5, 16, _hoisted_2)
-          ], 2)) : createCommentVNode("", true),
+            class: normalizeClass({ "disabled": !slotProps.computed.prevPageUrl })
+          }, _hoisted_3, 2)) : createCommentVNode("", true),
           (openBlock(true), createElementBlock(Fragment, null, renderList(slotProps.computed.pageRange, (page, key) => {
             return openBlock(), createElementBlock("li", {
               class: normalizeClass(["page-item pagination-page-nav", { "active": page == slotProps.computed.currentPage }]),
               key
             }, [
               createElementVNode("a", mergeProps({
-                class: "page-link py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white",
+                class: "bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium",
                 href: "#"
               }, toHandlers(slotProps.pageButtonEvents(page))), toDisplayString(page), 17)
             ], 2);
@@ -308,12 +306,11 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
           }, [
             createElementVNode("a", mergeProps({
               href: "#",
-              "aria-label": "Next",
               tabindex: !slotProps.computed.nextPageUrl && -1
-            }, toHandlers(slotProps.nextButtonEvents), { class: "page-link block py-2 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white" }), _hoisted_9, 16, _hoisted_6)
+            }, toHandlers(slotProps.nextButtonEvents), { class: "relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 hover:bg-gray-50" }), _hoisted_7, 16, _hoisted_4)
           ], 2)) : createCommentVNode("", true)
         ], 16)) : createCommentVNode("", true)
-      ])) : (openBlock(), createElementBlock("div", _hoisted_10, [
+      ])) : (openBlock(), createElementBlock("div", _hoisted_8, [
         slotProps.computed.total > slotProps.computed.perPage ? (openBlock(), createElementBlock("ul", mergeProps({ key: 0 }, _ctx.$attrs, {
           class: ["pagination", {
             "pagination-sm": slotProps.size == "small",
@@ -333,10 +330,10 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
               tabindex: !slotProps.computed.prevPageUrl && -1
             }, toHandlers(slotProps.prevButtonEvents)), [
               renderSlot(_ctx.$slots, "prev-nav", {}, () => [
-                _hoisted_12,
-                _hoisted_13
+                _hoisted_10,
+                _hoisted_11
               ])
-            ], 16, _hoisted_11)
+            ], 16, _hoisted_9)
           ], 2)) : createCommentVNode("", true),
           (openBlock(true), createElementBlock(Fragment, null, renderList(slotProps.computed.pageRange, (page, key) => {
             return openBlock(), createElementBlock("li", {
@@ -348,7 +345,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                 href: "#"
               }, toHandlers(slotProps.pageButtonEvents(page))), [
                 createTextVNode(toDisplayString(page) + " ", 1),
-                page == slotProps.computed.currentPage ? (openBlock(), createElementBlock("span", _hoisted_14, "(current)")) : createCommentVNode("", true)
+                page == slotProps.computed.currentPage ? (openBlock(), createElementBlock("span", _hoisted_12, "(current)")) : createCommentVNode("", true)
               ], 16)
             ], 2);
           }), 128)),
@@ -363,10 +360,10 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
               tabindex: !slotProps.computed.nextPageUrl && -1
             }, toHandlers(slotProps.nextButtonEvents)), [
               renderSlot(_ctx.$slots, "next-nav", {}, () => [
-                _hoisted_16,
-                _hoisted_17
+                _hoisted_14,
+                _hoisted_15
               ])
-            ], 16, _hoisted_15)
+            ], 16, _hoisted_13)
           ], 2)) : createCommentVNode("", true)
         ], 16)) : createCommentVNode("", true)
       ]))
