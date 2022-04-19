@@ -1,4 +1,4 @@
-import { resolveComponent, openBlock, createBlock, withCtx, createElementBlock, mergeProps, normalizeClass, createCommentVNode, Fragment, renderList, createElementVNode, toHandlers, toDisplayString, renderSlot, createTextVNode } from "vue";
+import { resolveComponent, openBlock, createBlock, withCtx, createElementBlock, normalizeClass, mergeProps, createElementVNode, toHandlers, createCommentVNode, Fragment, renderList, toDisplayString, renderSlot, createTextVNode } from "vue";
 const _sfc_main$1 = {
   emits: ["pagination-change-page"],
   props: {
@@ -211,25 +211,20 @@ const _sfc_main = {
     }
   }
 };
-const _hoisted_1 = { key: 0 };
-const _hoisted_2 = /* @__PURE__ */ createElementVNode("a", {
-  href: "#",
-  class: "bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium"
+const _hoisted_1 = ["tabindex"];
+const _hoisted_2 = /* @__PURE__ */ createElementVNode("svg", {
+  style: { "width": "1.25rem", "height": "1.25rem" },
+  class: "h-5 w-5",
+  xmlns: "http://www.w3.org/2000/svg",
+  viewBox: "0 0 20 20",
+  fill: "currentColor",
+  "aria-hidden": "true"
 }, [
-  /* @__PURE__ */ createElementVNode("svg", {
-    style: { "width": "1.25rem", "height": "1.25rem" },
-    class: "h-5 w-5",
-    xmlns: "http://www.w3.org/2000/svg",
-    viewBox: "0 0 20 20",
-    fill: "currentColor",
-    "aria-hidden": "true"
-  }, [
-    /* @__PURE__ */ createElementVNode("path", {
-      "fill-rule": "evenodd",
-      d: "M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z",
-      "clip-rule": "evenodd"
-    })
-  ])
+  /* @__PURE__ */ createElementVNode("path", {
+    "fill-rule": "evenodd",
+    d: "M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z",
+    "clip-rule": "evenodd"
+  })
 ], -1);
 const _hoisted_3 = [
   _hoisted_2
@@ -274,27 +269,35 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     onPaginationChangePage: $options.onPaginationChangePage
   }, {
     default: withCtx((slotProps) => [
-      slotProps.themeEngine === "tailwind" ? (openBlock(), createElementBlock("div", _hoisted_1, [
+      slotProps.themeEngine === "tailwind" ? (openBlock(), createElementBlock("div", {
+        key: 0,
+        class: normalizeClass(["flex", {
+          "pagination-sm": slotProps.size == "small",
+          "pagination-lg": slotProps.size == "large",
+          "justify-content-center": slotProps.align == "center",
+          "justify-content-end": slotProps.align == "right"
+        }])
+      }, [
         slotProps.computed.total > slotProps.computed.perPage ? (openBlock(), createElementBlock("ul", mergeProps({ key: 0 }, _ctx.$attrs, {
-          class: ["relative z-0 inline-flex rounded-md shadow-sm -space-x-px", {
-            "pagination-sm": slotProps.size == "small",
-            "pagination-lg": slotProps.size == "large",
-            "justify-content-center": slotProps.align == "center",
-            "justify-content-end": slotProps.align == "right"
-          }],
+          class: "relative z-0 inline-flex rounded-md shadow-sm -space-x-px",
           "aria-label": "Pagination"
         }), [
           slotProps.computed.prevPageUrl || slotProps.showDisabled ? (openBlock(), createElementBlock("li", {
             key: 0,
             class: normalizeClass({ "disabled": !slotProps.computed.prevPageUrl })
-          }, _hoisted_3, 2)) : createCommentVNode("", true),
+          }, [
+            createElementVNode("a", mergeProps({
+              href: "#",
+              tabindex: !slotProps.computed.prevPageUrl && -1
+            }, toHandlers(slotProps.prevButtonEvents), { class: "bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium" }), _hoisted_3, 16, _hoisted_1)
+          ], 2)) : createCommentVNode("", true),
           (openBlock(true), createElementBlock(Fragment, null, renderList(slotProps.computed.pageRange, (page, key) => {
             return openBlock(), createElementBlock("li", {
               class: normalizeClass(["page-item pagination-page-nav", { "active": page == slotProps.computed.currentPage }]),
               key
             }, [
               createElementVNode("a", mergeProps({
-                class: "bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium",
+                class: { "z-10 bg-indigo-50 border-indigo-500 text-indigo-600 relative inline-flex items-center px-4 py-2 border text-sm font-medium": page == slotProps.computed.currentPage, "bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium": page != slotProps.computed.currentPage },
                 href: "#"
               }, toHandlers(slotProps.pageButtonEvents(page))), toDisplayString(page), 17)
             ], 2);
@@ -309,7 +312,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
             }, toHandlers(slotProps.nextButtonEvents), { class: "bg-white border-gray-300 text-gray-500 hover:bg-gray-50 relative inline-flex items-center px-4 py-2 border text-sm font-medium" }), _hoisted_6, 16, _hoisted_4)
           ], 2)) : createCommentVNode("", true)
         ], 16)) : createCommentVNode("", true)
-      ])) : (openBlock(), createElementBlock("div", _hoisted_7, [
+      ], 2)) : (openBlock(), createElementBlock("div", _hoisted_7, [
         slotProps.computed.total > slotProps.computed.perPage ? (openBlock(), createElementBlock("ul", mergeProps({ key: 0 }, _ctx.$attrs, {
           class: ["pagination", {
             "pagination-sm": slotProps.size == "small",
