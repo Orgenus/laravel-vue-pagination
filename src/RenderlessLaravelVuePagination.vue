@@ -15,6 +15,10 @@ export default {
             type: Boolean,
             default: false
         },
+        themeEngine: {
+            type: String,
+            default: 'tailwind'
+        },
         size: {
             type: String,
             default: 'default',
@@ -128,6 +132,7 @@ export default {
             showDisabled: this.showDisabled,
             size: this.size,
             align: this.align,
+            themeEngine: this.themeEngine,
             computed: {
                 isApiResource: this.isApiResource,
                 currentPage: this.currentPage,

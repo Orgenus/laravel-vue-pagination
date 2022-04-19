@@ -8,7 +8,7 @@
         @pagination-change-page="onPaginationChangePage"
         v-slot="slotProps"
     >
-        <div v-if="slotProps.themeEngine == 'tailwind'">
+        <div v-if="slotProps.themeEngine === 'tailwind'">
             <ul
                 v-bind="$attrs"
                 class="pagination inline-flex -space-x-px"
@@ -114,7 +114,7 @@ export default {
         },
         themeEngine: {
             type: String,
-            default: "tailwind"
+            default: 'tailwind'
         },
         size: {
             type: String,

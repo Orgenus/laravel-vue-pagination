@@ -15,6 +15,10 @@ const _sfc_main$1 = {
       type: Boolean,
       default: false
     },
+    themeEngine: {
+      type: String,
+      default: "tailwind"
+    },
     size: {
       type: String,
       default: "default",
@@ -265,7 +269,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     onPaginationChangePage: $options.onPaginationChangePage
   }, {
     default: withCtx((slotProps) => [
-      slotProps.themeEngine == "tailwind" ? (openBlock(), createElementBlock("div", _hoisted_1, [
+      slotProps.themeEngine === "tailwind" ? (openBlock(), createElementBlock("div", _hoisted_1, [
         slotProps.computed.total > slotProps.computed.perPage ? (openBlock(), createElementBlock("ul", mergeProps({ key: 0 }, _ctx.$attrs, {
           class: ["pagination inline-flex -space-x-px", {
             "pagination-sm": slotProps.size == "small",
