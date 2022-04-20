@@ -274,8 +274,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         class: normalizeClass(["flex", {
           "pagination-sm": slotProps.size == "small",
           "pagination-lg": slotProps.size == "large",
-          "justify-content-center": slotProps.align == "center",
-          "justify-content-end": slotProps.align == "right"
+          "justify-center": slotProps.align == "center",
+          "justify-end": slotProps.align == "right"
         }])
       }, [
         slotProps.computed.total > slotProps.computed.perPage ? (openBlock(), createElementBlock("ul", mergeProps({ key: 0 }, _ctx.$attrs, {

@@ -13,8 +13,8 @@
             :class="{
                 'pagination-sm': slotProps.size == 'small',
                 'pagination-lg': slotProps.size == 'large',
-                'justify-content-center': slotProps.align == 'center',
-                'justify-content-end': slotProps.align == 'right'
+                'justify-center': slotProps.align == 'center',
+                'justify-end': slotProps.align == 'right'
             }" v-if="slotProps.themeEngine === 'tailwind'">
             <ul
                 v-bind="$attrs"
